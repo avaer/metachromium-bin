@@ -1,1 +1,1 @@
-# MetaChromium binary release
+# MetaChromium binary releases
