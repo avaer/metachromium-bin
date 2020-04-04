@@ -2,6 +2,7 @@
 <html>
 <head>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/0735724151.js" crossorigin="anonymous"></script>
 <script src="https://rawcdn.githack.com/ethereum/web3.js/a6ddec59e65116853435f203b25cb9c55824d084/dist/web3.min.js"></script>
 <style>
 * {
@@ -42,15 +43,18 @@ header .nav {
   text-transform: uppercase;
 }
 header .nav:hover, header .nav.open {
-  border-bottom-color: #7986cb;
+  border-bottom-color: #9575cd;
 }
 header .nav i {
+  margin-right: 5px;
+}
+/* header .nav i {
   display: inline-block;
   padding: 0 7px;
   padding-top: 2px;
-}
+} */
 .body {
-  background-color: #7986cb;
+  background-color: #9575cd;
 }
 .hero,
 .detail
@@ -80,8 +84,9 @@ header .nav i {
 <body class=body>
 <header id=header>
   <a href="/" class="nav">竹ヨナムららエリ竹</a>
-  <a href="/" class="nav open">Browser</a>
-  <a href="/test.html" class="nav">Extension</a>
+  <a href="https://get.metassium.com/" class="nav open"><i class="fa fa-download"></i> Browser</a>
+  <a href="https://extension.metassium.com/" class="nav"><i class="fa fa-download"></i> Extension</a>
+  <a href="https://github.com/exokitxr/xrpackage" class="nav"><i class="fa fa-github"></i> SDK</a>
 </header>
 <section class=hero>
   <div class=container>
