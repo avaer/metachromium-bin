@@ -155,11 +155,29 @@ header .nav i {
   const button = document.getElementById('button');
   const key = document.getElementById('key');
   const keyText = document.getElementById('key-text');
-  button.addEventListener('click', e => {
+  const keyValue = localStorage.getItem('key');
+  const _hide = () => {
     button.style.display = 'none';
     key.style.display = null;
-    keyText.innerText = 'LOL-LOL-LOL';
-  });
+  };
+  if (keyValue) {
+    _hide();
+    keyText.innerText = keyValue;
+  } else {
+    button.addEventListener('click', async e => {
+      const res = await fetch('https://keys.metachromium.com/', {
+        method: 'DELETE',
+      });
+      if (res.ok) {
+        const j = await res.json();
+        localStorage.setItem('key', j);
+        keyText.innerText = j;
+      } else {
+        keyText.innerText = 'No more keys!';
+      }
+      _hide();
+    });
+  }
 </script>
 </body>
 </html>
