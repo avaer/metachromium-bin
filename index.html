@@ -54,7 +54,7 @@ header .nav i {
   padding-top: 2px;
 } */
 .body {
-  background-color: #9575cd;
+  background-color: #000;
 }
 .hero,
 .detail
@@ -69,28 +69,76 @@ header .nav i {
   padding-top: 50px;
 }
 .container {
+  position: relative;
   display: flex;
   width: 600px;
   margin-left: 100px;
+  color: #FFF;
+  flex-direction: column;
+}
+.hero .container h1,
+.hero .container p
+{
+  margin: 0;
+  margin-bottom: 30px;
 }
 .hero .container h1 {
   padding: 20px 0;
-  border-bottom: 2px solid #000;
+  border-bottom: 2px solid #FFF;
   font-size: 40px;
   font-weight: 400;
+}
+.hero img,
+.hero video
+{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  /* filter: brightness(50%) blur(5px); */
+}
+.button {
+  display: inline-flex;
+  margin-right: auto;
+  padding: 20px;
+  background-color: #ef5350;
+  border: 0;
+  border-radius: 10px;
+  color: #FFF;
+  font-size: 14px;
+  /* font-weight: 600; */
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+.button:hover {
+  background-color: #FFF;
+  color: #ef5350;
+}
+.button > i {
+  margin-right: 7px;
+  font-size: 20px;
 }
 </style>
 </head>
 <body class=body>
 <header id=header>
-  <a href="/" class="nav">竹ヨナムららエリ竹</a>
-  <a href="https://get.metassium.com/" class="nav open"><i class="fa fa-download"></i> Browser</a>
-  <!-- <a href="https://extension.metassium.com/" class="nav"><i class="fa fa-download"></i> Extension</a> -->
-  <a href="https://github.com/exokitxr/xrpackage" class="nav"><i class="fa fa-github"></i> SDK</a>
+  <a href="/" class="nav">Metachromium</a>
+  <!-- <a href="/" class="nav">竹ヨナムららエリ竹</a> -->
+  <!-- <a href="https://get.metachromium.com/" class="nav open"><i class="fa fa-download"></i> Download</a> -->
+  <!-- <a href="https://extension.metachromium.com/" class="nav"><i class="fa fa-download"></i> Extension</a> -->
+  <!-- <a href="https://github.com/webaverse/xrpackage" class="nav"><i class="fa fa-github"></i> SDK</a> -->
 </header>
 <section class=hero>
+  <!-- <img src="screenshot.jpg"> -->
+  <video src="https://rawcdn.githack.com/exokitxr/webaverse/9e46f51ec76ec0641fe55825addc4bda5a051e82/video/video.mp4" autoplay="" muted="" loop=""></video>
   <div class=container>
-    <h1>Overlay spatial apps<br>in SteamVR and Chrome</h1>
+    <h1>Augment your SteamVR</h1>
+    <p>Metachromium is a fork of Chromium for AR in VR.<br>It runs WebXR layers in your SteamVR apps.<br>Tame a AR pet, scan QR codes, and more.</p>
+    <a href="/" class=button><i class="fa fa-steam"></i> Request Steam Key</a>
   </div>
 </section>
 </body>
