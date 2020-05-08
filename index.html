@@ -99,7 +99,9 @@ header .nav i {
   object-fit: cover;
   /* filter: brightness(50%) blur(5px); */
 }
-.button {
+.button,
+.key
+{
   display: inline-flex;
   margin-right: auto;
   padding: 20px;
@@ -114,13 +116,20 @@ header .nav i {
   cursor: pointer;
   outline: none;
 }
-.button:hover {
+.button:hover,
+.key
+{
   background-color: #FFF;
   color: #ef5350;
 }
-.button > i {
+.button > i,
+.key > i
+{
   margin-right: 7px;
   font-size: 20px;
+}
+.key {
+  cursor: text;
 }
 </style>
 </head>
@@ -138,8 +147,19 @@ header .nav i {
   <div class=container>
     <h1>Augment your SteamVR</h1>
     <p>Metachromium is a fork of Chromium for AR in VR.<br>It runs WebXR layers in your SteamVR apps.<br>Tame a AR pet, scan QR codes, and more.</p>
-    <a href="/" class=button><i class="fa fa-steam"></i> Request Steam Key</a>
+    <nav class=button id=button><i class="fa fa-steam"></i><span>Request Steam Key</span></nav>
+    <div class=key id=key style="display: none;"><i class="fa fa-steam"></i><span id=key-text></span></div>
   </div>
 </section>
+<script>
+  const button = document.getElementById('button');
+  const key = document.getElementById('key');
+  const keyText = document.getElementById('key-text');
+  button.addEventListener('click', e => {
+    button.style.display = 'none';
+    key.style.display = null;
+    keyText = 'LOL-LOL-LOL';
+  });
+</script>
 </body>
 </html>
