@@ -147,37 +147,9 @@ header .nav i {
   <div class=container>
     <h1>Augment your SteamVR</h1>
     <p>Metachromium adds AR to your VR.<br>It is a version of Chromium that layers WebXR on top of SteamVR.<br>Tame an AR pet, scan QR codes, and more.</p>
-    <nav class=button id=button><i class="fa fa-steam"></i><span>Request Steam Key</span></nav>
+    <a href="https://store.steampowered.com/app/685110/Metachromium/" class=button><i class="fa fa-steam"></i><span>Get it on Steam</span></a>
     <div class=key id=key style="display: none;"><i class="fa fa-steam"></i><span id=key-text></span></div>
   </div>
 </section>
-<script>
-  const button = document.getElementById('button');
-  const key = document.getElementById('key');
-  const keyText = document.getElementById('key-text');
-  const keyValue = localStorage.getItem('key');
-  const _hide = () => {
-    button.style.display = 'none';
-    key.style.display = null;
-  };
-  if (keyValue) {
-    _hide();
-    keyText.innerText = keyValue;
-  } else {
-    button.addEventListener('click', async e => {
-      const res = await fetch('https://keys.metachromium.com/', {
-        method: 'DELETE',
-      });
-      if (res.ok) {
-        const j = await res.json();
-        localStorage.setItem('key', j);
-        keyText.innerText = j;
-      } else {
-        keyText.innerText = 'No more keys!';
-      }
-      _hide();
-    });
-  }
-</script>
 </body>
 </html>
